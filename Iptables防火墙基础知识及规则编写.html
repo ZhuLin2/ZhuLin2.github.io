@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="朱木木博客" />
+  <meta name="keywords" content="iptables,防火墙," />
 
 
 
@@ -79,13 +79,18 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="朱木木的博客">
-<meta property="og:url" content="http://www.zhumumu.com/archives/2018/05/index.html">
+<meta name="description" content="Iptables是基于数据包过滤的linux免费开源防火墙，主要工作在osi七层的2、3、4层，如果编译内核，iptables也可以支持7层控制（squid代理+iptables） 容器、表、链相关知识 容器：形容包含或者属于的关系。 Iptables是表的容器，即iptables包含各个表。 表又是链的容器，即表里包含各个链。 链又是规则的容器，即链里包含各个规则。 Iptables的常见表、链">
+<meta name="keywords" content="iptables,防火墙">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Iptables防火墙基础知识及规则编写">
+<meta property="og:url" content="http://www.zhumumu.com/Iptables防火墙基础知识及规则编写.html">
 <meta property="og:site_name" content="朱木木的博客">
+<meta property="og:description" content="Iptables是基于数据包过滤的linux免费开源防火墙，主要工作在osi七层的2、3、4层，如果编译内核，iptables也可以支持7层控制（squid代理+iptables） 容器、表、链相关知识 容器：形容包含或者属于的关系。 Iptables是表的容器，即iptables包含各个表。 表又是链的容器，即表里包含各个链。 链又是规则的容器，即链里包含各个规则。 Iptables的常见表、链">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-07-09T03:21:13.251Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="朱木木的博客">
+<meta name="twitter:title" content="Iptables防火墙基础知识及规则编写">
+<meta name="twitter:description" content="Iptables是基于数据包过滤的linux免费开源防火墙，主要工作在osi七层的2、3、4层，如果编译内核，iptables也可以支持7层控制（squid代理+iptables） 容器、表、链相关知识 容器：形容包含或者属于的关系。 Iptables是表的容器，即iptables包含各个表。 表又是链的容器，即表里包含各个链。 链又是规则的容器，即链里包含各个规则。 Iptables的常见表、链">
 
 
 
@@ -115,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://www.zhumumu.com/archives/2018/05/"/>
+  <link rel="canonical" href="http://www.zhumumu.com/Iptables防火墙基础知识及规则编写.html"/>
 
 
 
 
 
-  <title>归档 | 朱木木的博客</title>
+  <title>Iptables防火墙基础知识及规则编写 | 朱木木的博客</title>
   
 
 
@@ -140,7 +145,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -244,111 +249,229 @@
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
-
-      <span class="archive-page-counter">
-        
-        
-        
-          
-        
-        嗯..! 目前共计 21 篇日志。 继续努力。
-      </span>
-
-      
-
-        
-        
-        
-
-        
-          
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2018">2018</h1>
-          </div>
-        
-        
-
-        
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.zhumumu.com/Iptables防火墙基础知识及规则编写.html">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="朱木木">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="朱木木的博客">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/JAVA面向对象三大特性之继承.html" itemprop="url">
-              
-                <span itemprop="name">JAVA面向对象三大特性之继承</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">Iptables防火墙基础知识及规则编写</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-05-11T16:24:26+08:00"
-              content="2018-05-11" >
-          05-11
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-18T19:50:33+08:00">
+                2017-11-18
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/JAVA面向对象三大特性之封装.html" itemprop="url">
-              
-                <span itemprop="name">JAVA面向对象三大特性之封装</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-05-10T18:19:36+08:00"
-              content="2018-05-10" >
-          05-10
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
+      
+        <p>Iptables是基于数据包过滤的linux免费开源防火墙，主要工作在osi七层的2、3、4层，如果编译内核，iptables也可以支持7层控制（squid代理+iptables） 容器、表、链相关知识 容器：形容包含或者属于的关系。 Iptables是表的容器，即iptables包含各个表。 表又是链的容器，即表里包含各个链。 链又是规则的容器，即链里包含各个规则。 Iptables的常见表、链以及相关关系</p>
+<ol>
+<li>Filter表：主要和主机自身有关，真正负责防火墙功能的（过滤流入流出数据包），是 iptables默认表</li>
+</ol>
+<p>其中包含的链及其功能： INPUT:负责过滤目标地址是本机的数据包，过滤进入主机的数据包 FORWARD：负责转发流经主机的数据包 OUTPUT：处理从主机流出的数据包</p>
+<ol start="2">
+<li>NAT表：负责网络地址转换</li>
+</ol>
+<p>其中包含的链及其功能： OUTPUT：改变主机发出数据包的目的地址 PREROUTING：在数据包到达防火墙时进行路由判断之前执行的规则，改变数据包  的目的地址、目的 端口等 POSTROUTING:在数据包离开防火墙时进行路由判断之后执行的规则，改变数据包  的源地址、源端口等</p>
+<ol start="3">
+<li>Mangle：主要负责修改数据包中特殊的路由标记，如TTL\TOS\MARK等</li>
+</ol>
+<p>总结关系如下（√表示包含，×表示不包含）：</p>
+<p>表</p>
+<p>链（所有链名要大写）</p>
+<p>INPUT</p>
+<p>FORWARD</p>
+<p>OUTPUT</p>
+<p>PREROTING</p>
+<p>POSTROUTING</p>
+<p>Fillter</p>
+<p>√</p>
+<p>√</p>
+<p>√</p>
+<p>×</p>
+<p>×</p>
+<p>NAT</p>
+<p>×</p>
+<p>×</p>
+<p>√</p>
+<p>√</p>
+<p>√</p>
+<p>Mangle</p>
+<p>√</p>
+<p>√</p>
+<p>√</p>
+<p>√</p>
+<p>√</p>
+<p>规则编写</p>
+<ul>
+<li>禁用80端口</li>
+</ul>
+<p>iptables -t filter -A INPUT -p tcp –dport 80 -j DROP INPUT后面也可以直接加数字指定插入行 -t指定表名 -p协议 –dport目的端口，–sport源端口 -A换成-D表示删除（如：iptables -t filter -D INPUT -p tcp –dport 80 -j DROP） -j 处理行为有：ACCEPT（允许） DROP（丢弃）REJECT（拒绝） -A 默认插到结尾，如果是-I 默认插到开头</p>
+<ul>
+<li>禁止10.0.0网段连入</li>
+</ul>
+<p>iptables -t filter -A INPUT -i ens33 -s 10.0.0.0/24 -j DROP 可以在-s前添加!表示非此网段 -i 表示该接口进 ，-o 表示该接口出 -s表示源，-d表示目的</p>
+<ul>
+<li>封端口范围52000-53000</li>
+</ul>
+<p>iptables -A INPUT -p tcp –dport 52000:53000 -j DROP</p>
+<ul>
+<li>封多个端口100,101,102</li>
+</ul>
+<p>iptables -A INPUT -p tcp -m multiport –dport 100,101,102 -j DROP 部署网关NAT 内网访问外网 1.有固定的外网地址 iptables -t nat -A POSTROUTING -s 192.168.1.0/24 -o eth0 -j SNAT –to-source 221.1.1.1 -s 内网网段 -o 网关的外网卡接口 –to-source 221.1.1.1 外网卡ip地址 2.变化的外网卡地址（ADSL） iptables -t nat -A POSTROUTING -s 192.168.1.0/24 -j MASQUERADE 部署内网服务器映射到外网接口 如：将内网web服务器192.168.1.10开放的9000端口映射到221.1.1.1的80端口上,此时访问221.1.1.10:80就会访问到192.168.1.10:9000 iptables -t nat -A PREROUTING -d 221.1.1.1 -p tcp –dport 80 -j DNAT –todestination 192.168.1.10:9000</p>
+
+      
     </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/iptables/" rel="tag"># iptables</a>
+          
+            <a href="/tags/防火墙/" rel="tag"># 防火墙</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/MySQL调优的常用参数.html" rel="next" title="MySQL调优的常用参数">
+                <i class="fa fa-chevron-left"></i> MySQL调优的常用参数
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/(一)JAVA学习之常量及变量基础.html" rel="prev" title="(一)JAVA学习之常量及变量基础">
+                (一)JAVA学习之常量及变量基础 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -356,6 +479,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -605,6 +732,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 

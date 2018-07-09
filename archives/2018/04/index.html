@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="hexo,hello" />
+  <meta name="keywords" content="朱木木博客" />
 
 
 
@@ -81,7 +81,7 @@
 
 <meta property="og:type" content="website">
 <meta property="og:title" content="朱木木的博客">
-<meta property="og:url" content="http://zhumumu.com/archives/2018/04/index.html">
+<meta property="og:url" content="http://www.zhumumu.com/archives/2018/04/index.html">
 <meta property="og:site_name" content="朱木木的博客">
 <meta property="og:locale" content="zh-Hans">
 <meta name="twitter:card" content="summary">
@@ -115,7 +115,7 @@
 
 
 
-  <link rel="canonical" href="http://zhumumu.com/archives/2018/04/"/>
+  <link rel="canonical" href="http://www.zhumumu.com/archives/2018/04/"/>
 
 
 
@@ -281,7 +281,7 @@
 
       <h2 class="post-title">
         
-            <a class="post-title-link" href="/2018/04/03/（五）JAVA学习之方法/" itemprop="url">
+            <a class="post-title-link" href="/（五）JAVA学习之方法.html" itemprop="url">
               
                 <span itemprop="name">（五）JAVA学习之方法</span>
               
@@ -318,7 +318,7 @@
 
       <h2 class="post-title">
         
-            <a class="post-title-link" href="/2018/04/02/(四)JAVA学习之数组/" itemprop="url">
+            <a class="post-title-link" href="/(四)JAVA学习之数组.html" itemprop="url">
               
                 <span itemprop="name">(四)JAVA学习之数组</span>
               
@@ -407,7 +407,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -455,29 +455,53 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+        
+<div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">朱木木</span>
+  <span class="author" itemprop="copyrightHolder">朱木木--
+  <a class="theme-link" target="_blank" href="http://www.beianbeian.com"> 渝ICP备17014032号</a></span>
+  <br>
+  <span>　<i class="fa fa-bomb"></i></span>
+<span id="showDays"></span>
 
   
 </div>
 
 
-  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
-
-
-
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a></div>
 
 
 
 
+
+
+
+<script>
+  var seconds = 1000;
+  var minutes = seconds * 60;
+  var hours = minutes * 60;
+  var days = hours * 24;
+  var years = days * 365;
+  var birthDay = Date.UTC(2017,09,01,00,00,00); // 这里设置建站时间
+  setInterval(function() {
+    var today = new Date();
+    var todayYear = today.getFullYear();
+    var todayMonth = today.getMonth()+1;
+    var todayDate = today.getDate();
+    var todayHour = today.getHours();
+    var todayMinute = today.getMinutes();
+    var todaySecond = today.getSeconds();
+    var now = Date.UTC(todayYear,todayMonth,todayDate,todayHour,todayMinute,todaySecond);
+    var diff = now - birthDay;
+    var diffYears = Math.floor(diff/years);
+    var diffDays = Math.floor((diff/days)-diffYears*365);
+    var diffHours = Math.floor((diff-(diffYears*365+diffDays)*days)/hours);
+    var diffMinutes = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours)/minutes);
+    var diffSeconds = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours-diffMinutes*minutes)/seconds);
+      document.getElementById('showDays').innerHTML="本站已艰难的运行 "+diffYears+" 年 "+diffDays+" 天 "+diffHours+" 小时 "+diffMinutes+" 分钟 "+diffSeconds+" 秒";
+  }, 1000);
+</script>
         
 
 

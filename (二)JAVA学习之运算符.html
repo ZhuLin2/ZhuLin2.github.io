@@ -1,0 +1,1081 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="java," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="1.1                算术运算符运算符是用来计算数据的符号。数据可以是常量，也可以是变量。被运算符操作的数我们称为操作数。 算术运算符最常见的操作就是将操作数参与数学计算，具体使用看下图： 运算符 运算规则 范例 结果 + 正号 +3 3 + 加 2+3 5 + 连接字符串 “中”+“国” “中国” - 负号 int a=3;-a -3 - 减 3-1 2 * 乘 2*3 6 /">
+<meta name="keywords" content="java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="(二)JAVA学习之运算符">
+<meta property="og:url" content="http://www.zhumumu.com/(二)JAVA学习之运算符.html">
+<meta property="og:site_name" content="朱木木的博客">
+<meta property="og:description" content="1.1                算术运算符运算符是用来计算数据的符号。数据可以是常量，也可以是变量。被运算符操作的数我们称为操作数。 算术运算符最常见的操作就是将操作数参与数学计算，具体使用看下图： 运算符 运算规则 范例 结果 + 正号 +3 3 + 加 2+3 5 + 连接字符串 “中”+“国” “中国” - 负号 int a=3;-a -3 - 减 3-1 2 * 乘 2*3 6 /">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://zhumumu.com/wp-content/uploads/2018/03/运行结果.png">
+<meta property="og:image" content="http://zhumumu.com/wp-content/uploads/2018/03/结果.png">
+<meta property="og:updated_time" content="2018-07-09T03:21:13.254Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="(二)JAVA学习之运算符">
+<meta name="twitter:description" content="1.1                算术运算符运算符是用来计算数据的符号。数据可以是常量，也可以是变量。被运算符操作的数我们称为操作数。 算术运算符最常见的操作就是将操作数参与数学计算，具体使用看下图： 运算符 运算规则 范例 结果 + 正号 +3 3 + 加 2+3 5 + 连接字符串 “中”+“国” “中国” - 负号 int a=3;-a -3 - 减 3-1 2 * 乘 2*3 6 /">
+<meta name="twitter:image" content="http://zhumumu.com/wp-content/uploads/2018/03/运行结果.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://www.zhumumu.com/(二)JAVA学习之运算符.html"/>
+
+
+
+
+
+  <title>(二)JAVA学习之运算符 | 朱木木的博客</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">朱木木的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.zhumumu.com/(二)JAVA学习之运算符.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="朱木木">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="朱木木的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">(二)JAVA学习之运算符</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-28T15:34:53+08:00">
+                2018-03-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JAVA/" itemprop="url" rel="index">
+                    <span itemprop="name">JAVA</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="1-1-算术运算符"><a href="#1-1-算术运算符" class="headerlink" title="1.1                算术运算符"></a>1.1                算术运算符</h2><p>运算符是用来计算数据的符号。数据可以是常量，也可以是变量。被运算符操作的数我们称为操作数。 算术运算符最常见的操作就是将操作数参与数学计算，具体使用看下图：</p>
+<p><strong>运算符</strong></p>
+<p><strong>运算规则</strong></p>
+<p><strong>范例</strong></p>
+<p><strong>结果</strong></p>
+<p>+</p>
+<p>正号</p>
+<p>+3</p>
+<p>3</p>
+<p>+</p>
+<p>加</p>
+<p>2+3</p>
+<p>5</p>
+<p>+</p>
+<p>连接字符串</p>
+<p>“中”+“国”</p>
+<p>“中国”</p>
+<p>-</p>
+<p>负号</p>
+<p>int a=3;-a</p>
+<p>-3</p>
+<p>-</p>
+<p>减</p>
+<p>3-1</p>
+<p>2</p>
+<p>*</p>
+<p>乘</p>
+<p>2*3</p>
+<p>6</p>
+<p>/</p>
+<p>除</p>
+<p>5/2</p>
+<p>2</p>
+<p>%</p>
+<p>取模</p>
+<p>5/2</p>
+<p>1</p>
+<p>++</p>
+<p>自增</p>
+<p>int a=1;a++/++a</p>
+<p>2</p>
+<p>–</p>
+<p>自减</p>
+<p>int b=3;a–/–a</p>
+<p>2</p>
+<p>我们在使用算术运算符时，记得要注意下列事项：</p>
+<ul>
+<li>加法运算符在连接字符串时要注意，只有直接与字符串相加才会转成字符串。</li>
+<li>除法“/”当两边为整数时，取整数部分，舍余数。当其中一边为浮点型时，按正常规则相除。</li>
+<li>“%”为整除取余符号，小数取余没有意义。结果符号与被取余符号相同。</li>
+<li>整数做被除数，0不能做除数，否则报错。</li>
+</ul>
+<p>代码演示 /* * 算术运算符 <em>/ <strong>public</strong> <strong>class</strong> OperatorDemo1 { <strong>public</strong> <strong>static</strong> <strong>void</strong> main(String[] args) { /</em> <em> 常量使用算数运算符 </em>/ System.<em>out</em>.println(10+20);   /<em> </em> 变量使用算数运算符 */ <strong>int</strong> x = 10; <strong>int</strong> y = 20; //“+”作为加法运算使用 <strong>int</strong> z = x + y; //“+”作为连接字符串使用 System.<em>out</em>.println(“x=”+x); System.<em>out</em>.println(“y=”+y); System.<em>out</em>.println(“z=”+z); } } 运行结果如下图所示。 <img src="http://zhumumu.com/wp-content/uploads/2018/03/运行结果.png" alt=""></p>
+<h2 id="1-2-算数运算符-、–的使用"><a href="#1-2-算数运算符-、–的使用" class="headerlink" title="1.2                算数运算符++、–的使用"></a>1.2                算数运算符++、–的使用</h2><p>在一般情况下，算数运算符不会改变参与计算的变量值。而是在原有变量值不变的情况下，计算出新的值。但是有些操作符会改变参与计算的变量的值，比如++，–。 我们来看一段代码： int a = 3; int b = 3; a++; b–; System.out.println(a); System.out.println(b); 上面代码的输出结果a值为4，b值为2； 这说明a的原有值发生了改变，在原有值的基础上自增1；b的原有值也发生了改变，在原有值的基础上自减1；</p>
+<ul>
+<li>++运算符，会在原有值的基础上自增1；</li>
+<li><p>–运算符，会在原有值的基础上自减1。</p>
+<p>我们再看一段代码： int a = 3; int b = 3; ++a; –b; System.out.println(a); System.out.println(b); 上面代码的输出结果a值为4，b值为2； 这说明++,–运算符单独使用，不参与运算操作时，运算符前后位置导致的运算结果是一致的。   接下来，介绍下++，–运算符参与运算操作时，发生了怎样的变化，我们来看一段代码： int a = 3; int b; b = a++ + 10; System.out.println(a); System.out.println(b); 上面代码的输出结果a值为4，b值为13； 这里我要强调一下了，当++，–运算符参与运算操作时，后置++，–的作用：</p>
+</li>
+<li><p>++,–运算符后置时，先使用变量a原有值参与运算操作，运算操作完成后，变量a的值自增1或者自减1；</p>
+<p>再介绍下++，–运算符前置时，参与运算操作的变化，我们来看一段代码： int a = 3; int b; b = ++a + 10; System.out.println(a); System.out.println(b); 上面代码的输出结果a值为4，b值为14； 这里我强调一下，当++，–运算符参与运算操作时，前置++，–的作用：</p>
+</li>
+<li><p>++，–运算符前置时，先将变量a的值自增1或者自减1，然后使用更新后的新值参与运算操作。</p>
+</li>
+</ul>
+<h2 id="1-3-赋值运算符"><a href="#1-3-赋值运算符" class="headerlink" title="1.3                赋值运算符"></a>1.3                赋值运算符</h2><p>赋值运算符就是为变量赋值的符号，赋值运算符的使用看下图：  </p>
+<p><strong>运算符</strong></p>
+<p><strong>运算规则</strong></p>
+<p><strong>范例</strong></p>
+<p><strong>结果</strong></p>
+<p>=</p>
+<p>赋值</p>
+<p>int a=2</p>
+<p>2</p>
+<p>+=</p>
+<p>加后赋值</p>
+<p>int a=2，a+=2</p>
+<p>4</p>
+<p>-=</p>
+<p>减后赋值</p>
+<p>int a=2，a-=2</p>
+<p>0</p>
+<p>*=</p>
+<p>乘后赋值</p>
+<p>int a=2，a*=2</p>
+<p>4</p>
+<p>/=</p>
+<p>整除后赋值</p>
+<p>int a=2，a/=2</p>
+<p>1</p>
+<p>%=</p>
+<p>取模后赋值</p>
+<p>int a=2，a%=2</p>
+<p>0</p>
+<p>  注意：诸如+=这样形式的赋值运算符，会将结果自动强转成等号左边的数据类型。 运算符的使用 /* * 赋值运算符 * +=, -=, *=, /=, %= ： * 上面的运算符作用：将等号左右两边计算，会将结果自动强转成等号左边的数据类型,再赋值给等号左边的 * 注意：赋值运算符左边必须是变量 */ <strong>public</strong> <strong>class</strong> OperatorDemo2 { <strong>public</strong> <strong>static</strong> <strong>void</strong> main(String[] args) { <strong>byte</strong> x = 10; x += 20;// 相当于 x = (byte)(x+20); System.<em>out</em>.println(x); } } 运行结果如下图所示。 <img src="http://zhumumu.com/wp-content/uploads/2018/03/结果.png" alt=""></p>
+<h2 id="1-4-比较运算符"><a href="#1-4-比较运算符" class="headerlink" title="1.4                比较运算符"></a>1.4                比较运算符</h2><p>比较运算符，又叫关系运算符，它是用来判断两个操作数的大小关系及是否相等关系的，结果是布尔值true或者false。</p>
+<p><strong>运算符</strong></p>
+<p><strong>运算规则</strong></p>
+<p><strong>范例</strong></p>
+<p><strong>结果</strong></p>
+<p>==</p>
+<p>相等于</p>
+<p>4==3</p>
+<p>False</p>
+<p>!=</p>
+<p>不等于</p>
+<p>4!=3</p>
+<p>True</p>
+<p>&lt;</p>
+<p>小于</p>
+<p>4&lt;3</p>
+<p>False</p>
+<blockquote>
+</blockquote>
+<p>大于</p>
+<p>4&gt;3</p>
+<p>True</p>
+<p>&lt;=</p>
+<p>小于等于</p>
+<p>4&lt;=3</p>
+<p>False</p>
+<blockquote>
+<p>=</p>
+</blockquote>
+<p>大于等于</p>
+<p>4&gt;=3</p>
+<p>True</p>
+<p>这里需要注意一下：</p>
+<ul>
+<li>赋值运算符的 = 符号与比较运算符的 == 符号是有区别的，如下：<ul>
+<li>赋值运算符的 = 符号，是用来将 = 符号右边的值，赋值给 = 符号左边的变量；</li>
+<li>比较运算符的 == 符号，是用来判断 == 符号 左右变量的值是否相等的。</li>
+</ul>
+</li>
+</ul>
+<p>演示一下这个注意事项： int a = 3; int b = 4; System.out.println( a=b ); System.out.println( a==b ); 上面代码输出的结果第一个值为4，第二个值为false。</p>
+<h2 id="1-5-逻辑运算符"><a href="#1-5-逻辑运算符" class="headerlink" title="1.5                逻辑运算符"></a>1.5                逻辑运算符</h2><p>逻辑运算符，它是用于布尔值进行运算的，运算的最终结果为布尔值true或false。</p>
+<p><strong>运算符</strong></p>
+<p><strong>运算规则</strong></p>
+<p><strong>范例</strong></p>
+<p><strong>结果</strong></p>
+<p>&amp;</p>
+<p>与</p>
+<p>false&amp;true</p>
+<p>False</p>
+<p>|</p>
+<p>或</p>
+<p>false|true</p>
+<p>True</p>
+<p>^</p>
+<p>异或</p>
+<p>true^flase</p>
+<p>True</p>
+<p>!</p>
+<p>非</p>
+<p>!true</p>
+<p>Flase</p>
+<p>&amp;&amp;</p>
+<p>短路与</p>
+<p>false&amp;&amp;true</p>
+<p>False</p>
+<p>||</p>
+<p>短路或</p>
+<p>false||true</p>
+<p>True</p>
+<p>逻辑运算符的常规使用方式：</p>
+<ul>
+<li>逻辑运算符通常连接两个其他表达式计算后的布尔值结果</li>
+<li>当使用短路与或者短路或时，只要能判断出结果则后边的部分就不再判断。</li>
+</ul>
+<p>代码演示： boolean b = 100&gt;10; boolean b2 = false; System.out.println(b&amp;&amp;b2); // 打印结果为 false System.out.println(b||b2); //打印结果为 true System.out.println(!b2); //打印结果为 true System.out.println(b &amp;&amp; 100&gt;10); //打印结果为 true，本行结果的计算方式稍后讲解运算符优先级时解答 总结运算符的结果规律：</p>
+<ul>
+<li>短路与&amp;&amp;:参与运算的两边数据，有false，则运算结果为false；</li>
+<li>短路或||:参与运算的两边数据，有true，则运算结果为true；</li>
+<li>逻辑非! : 参与运算的数据，原先是true则变成false，原先是false则变成true。</li>
+</ul>
+<h2 id="1-6-三元运算符"><a href="#1-6-三元运算符" class="headerlink" title="1.6                三元运算符"></a>1.6                三元运算符</h2><p>接下来我们要学习的三元运算符与之前的运算符不同。之前学习的均为一元或者二元运算符。元即参与运算的数据。</p>
+<ul>
+<li>格式：</li>
+</ul>
+<p>(条件表达式)？表达式1：表达式2；</p>
+<ul>
+<li>表达式：通俗的说，即通过使用运算符将操作数联系起来的式子，例如：<ul>
+<li>3+2，使用算数运算符将操作数联系起来，这种情况，我们称为算数表达式。</li>
+<li>3&gt;2，使用比较运算符（也称为条件运算符）将操作数联系起来，这种情况，我们称为条件表达式。</li>
+<li>其他表达式，不再一一举例。</li>
+</ul>
+</li>
+<li>三元运算符运算规则：</li>
+</ul>
+<p>先判断条件表达式的值，若为true，运算结果为表达式1；若为false，运算结果为表达式2。   通过代码演示，我们来学习下三元运算符的使用： 方式一： System.out.println( 3&gt;2 ? “正确” : “错误” ); // 三元运算符运算后的结果为true，运算结果为表达式1的值“正确”，然后将结果“正确”，在控制台输出打印   方式二： int a = 3; int b = 4; String result = (a==b) ? “相等” : “不相等”; //三元运算符运算后的结果为false，运算结果为表达式2的值“不相等”，然后将结果赋值给了变量result   方式三： int n = (3&gt;2 &amp;&amp; 4&gt;6) ? 100 : 200; //三元运算符运算后的结果为false，运算结果为表达式2的值200,然后将结果200赋值给了变量n  </p>
+<h2 id="1-7-运算符优先级"><a href="#1-7-运算符优先级" class="headerlink" title="1.7                运算符优先级"></a>1.7                运算符优先级</h2><p>在学习运算符的过程中，我们发现，当多个运算符一起使用的时候，容易出现不清晰先后运算顺序的问题，那么，在这里，我们来学习下，运算符之间的运算优先级。 下图是每种运算符的优先级，按照运算先后顺序排序（优先级相同的情况下，按照从左到右的顺序依次运算）</p>
+<p><strong>优先级</strong></p>
+<p><strong>描述</strong></p>
+<p><strong>运算符</strong></p>
+<p><strong>1</strong></p>
+<p>括号</p>
+<p>()、[]</p>
+<p><strong>2</strong></p>
+<p>正负号</p>
+<p>+、-</p>
+<p><strong>3</strong></p>
+<p>自增自减，非</p>
+<p>++、–、!</p>
+<p><strong>4</strong></p>
+<p>乘除，取余</p>
+<p>*、/、%</p>
+<p><strong>5</strong></p>
+<p>加减</p>
+<p>+、-</p>
+<p><strong>6</strong></p>
+<p>移位运算</p>
+<p>&lt;&lt;、&gt;&gt;、&gt;&gt;&gt;</p>
+<p><strong>7</strong></p>
+<p>大小关系</p>
+<blockquote>
+<p>、&gt;=、&lt;、&lt;=</p>
+</blockquote>
+<p><strong>8</strong></p>
+<p>相等关系</p>
+<p>==、!=</p>
+<p><strong>9</strong></p>
+<p>按位与</p>
+<p>&amp;</p>
+<p><strong>10</strong></p>
+<p>按位异或</p>
+<p>^</p>
+<p><strong>11</strong></p>
+<p>按位或</p>
+<p>|</p>
+<p><strong>12</strong></p>
+<p>逻辑与</p>
+<p>&amp;&amp;</p>
+<p><strong>13</strong></p>
+<p>逻辑或</p>
+<p>||</p>
+<p><strong>14</strong></p>
+<p>条件运算</p>
+<p>?:</p>
+<p><strong>15</strong></p>
+<p>赋值运算</p>
+<p>=、+=、-=、*=、/=、%=</p>
+<p><strong>16</strong></p>
+<p>位赋值运算</p>
+<p>&amp;=、|=、&lt;&lt;=、&gt;&gt;=、&gt;&gt;&gt;=</p>
+<p>优先级顺序看完了，我们来通过代码，加强一下： int n = 3&gt;4 ? 100 : 200; 这行的代码运算执行顺序我们来写一下：</p>
+<ul>
+<li>执行 3&gt;4操作，得到布尔类型false的结果</li>
+<li>通过结果false，将对应的表达式2的结果200，作为运算的最终结果</li>
+<li><p>把200 赋值给变量n</p>
+<p>接下来，我们看一个比较复杂的代码： int a = 5; int b = 3; int c = 1; int n2 = (a&gt;b &amp;&amp; b&gt;c) ? (c++) : (++c); 这段代码运算执行顺序我们也写一下：</p>
+</li>
+<li><p>小括号优先级高，我们先运算第一组小括号中的代码</p>
+</li>
+<li>1. 比较运算符”&gt;” 优先级大于 逻辑运算符”&amp;&amp;”<ul>
+<li>先执行 a&gt;b,得到结果true；</li>
+<li>再执行 b&gt;c,得到结果true；</li>
+<li>最后执行 a&gt;b的结果 &amp;&amp; b&gt;c的结果，即 true &amp;&amp; true, 结果为true</li>
+</ul>
+</li>
+<li>三元运算符中的条件判断结果为true，返回表达式1的结果 c++<ul>
+<li>先将变量c的原有值赋值给变量n2，即n2值为1；</li>
+<li>再将变量c的值自增1,更新为2。</li>
+</ul>
+</li>
+</ul>
+<h2 id="1-8-总结"><a href="#1-8-总结" class="headerlink" title="1.8                总结"></a>1.8                总结</h2><ul>
+<li>算数运算符<ul>
+<li>用来完成算数运算（如加减乘除计算等）</li>
+<li>++，–运算符的使用<ul>
+<li>++，–前置（如++a），当参与运算时，变量a的值先自增1，然后用自增后的新值再参与运算；</li>
+<li>++，–后置（如a++），当参与运算时，变量a先使用原有值参与运算符，变量a的值再自增1。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>赋值运算符<ul>
+<li>用来完成数据的赋值（如 int a = 100;）</li>
+<li>+=,-,*=,/=这样的赋值运算符包含了一个强制转换的操作，会将左右两边运算后的结果，强制类型转换后赋值给左边</li>
+</ul>
+</li>
+</ul>
+<p>int n = 10; byte by = 20; by += n; // 运算完毕后，by的值为byte类型30， 相当于代码 by = (byte)(by + n);  </p>
+<ul>
+<li>比较运算符<ul>
+<li>用来比较数据的大小（如 3&gt;4），比较运算符也称为条件运算符。</li>
+<li>比较后的结果为布尔类型Boolean的值</li>
+<li>“==”两个等号代表比较是否相等，“=”一个等号代表赋值。</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>逻辑运算符<ul>
+<li>逻辑与&amp; 和逻辑短路与&amp;&amp;：代表着并且的意思，左右两边都要条件成立，结果才为true；</li>
+<li>逻辑或| 和逻辑短路或||：代表着或者的意思，左边两边有一个条件成立，结果就为true；</li>
+<li>逻辑非!：代表着相反的意思，原先是false，结果就为true；原先是ture，结果就为false；</li>
+<li>逻辑异或^： 左右两边条件结果相同，结果就为false，左右两边条件结果不同，结果就为true；</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>三元运算符<ul>
+<li>根据判断条件运算结果，执行不同的表达式值；条件为true，执行表达式1，否则，执行表达式2。</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/java/" rel="tag"># java</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/linux内核优化参数.html" rel="next" title="linux内核优化参数">
+                <i class="fa fa-chevron-left"></i> linux内核优化参数
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/(三)JAVA学习之流程控制语句.html" rel="prev" title="(三)JAVA学习之流程控制语句">
+                (三)JAVA学习之流程控制语句 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.png"
+                alt="朱木木" />
+            
+              <p class="site-author-name" itemprop="name">朱木木</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-算术运算符"><span class="nav-number">1.</span> <span class="nav-text">1.1                算术运算符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-算数运算符-、–的使用"><span class="nav-number">2.</span> <span class="nav-text">1.2                算数运算符++、–的使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-赋值运算符"><span class="nav-number">3.</span> <span class="nav-text">1.3                赋值运算符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-4-比较运算符"><span class="nav-number">4.</span> <span class="nav-text">1.4                比较运算符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-5-逻辑运算符"><span class="nav-number">5.</span> <span class="nav-text">1.5                逻辑运算符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-6-三元运算符"><span class="nav-number">6.</span> <span class="nav-text">1.6                三元运算符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-7-运算符优先级"><span class="nav-number">7.</span> <span class="nav-text">1.7                运算符优先级</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-8-总结"><span class="nav-number">8.</span> <span class="nav-text">1.8                总结</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        
+<div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">朱木木--
+  <a class="theme-link" target="_blank" href="http://www.beianbeian.com"> 渝ICP备17014032号</a></span>
+  <br>
+  <span>　<i class="fa fa-bomb"></i></span>
+<span id="showDays"></span>
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+<script>
+  var seconds = 1000;
+  var minutes = seconds * 60;
+  var hours = minutes * 60;
+  var days = hours * 24;
+  var years = days * 365;
+  var birthDay = Date.UTC(2017,09,01,00,00,00); // 这里设置建站时间
+  setInterval(function() {
+    var today = new Date();
+    var todayYear = today.getFullYear();
+    var todayMonth = today.getMonth()+1;
+    var todayDate = today.getDate();
+    var todayHour = today.getHours();
+    var todayMinute = today.getMinutes();
+    var todaySecond = today.getSeconds();
+    var now = Date.UTC(todayYear,todayMonth,todayDate,todayHour,todayMinute,todaySecond);
+    var diff = now - birthDay;
+    var diffYears = Math.floor(diff/years);
+    var diffDays = Math.floor((diff/days)-diffYears*365);
+    var diffHours = Math.floor((diff-(diffYears*365+diffDays)*days)/hours);
+    var diffMinutes = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours)/minutes);
+    var diffSeconds = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours-diffMinutes*minutes)/seconds);
+      document.getElementById('showDays').innerHTML="本站已艰难的运行 "+diffYears+" 年 "+diffDays+" 天 "+diffHours+" 小时 "+diffMinutes+" 分钟 "+diffSeconds+" 秒";
+  }, 1000);
+</script>
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

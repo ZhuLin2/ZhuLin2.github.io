@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="朱木木博客" />
+  <meta name="keywords" content="mysql,主从复制," />
 
 
 
@@ -79,13 +79,20 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="朱木木的博客">
-<meta property="og:url" content="http://www.zhumumu.com/archives/2018/05/index.html">
+<meta name="description" content="一、主从复制介绍及原理 Mysql支持单向、双向、实时、异步复制。在复制过程中，一台充当主服务器（master），而一个或者其他充当从服务器（slave）。有利于数据库架构的健壮性、提升访问速度和易于管理。大多数的mysql主从同步都是异步复制方式，即不是严格的实时数据同步。当配置好主从复制后，所有数据内容的更新就必须在主服务器上进行，以避免用户对主服务器数据库内容更新与对从服务器内容更新不一致。">
+<meta name="keywords" content="mysql,主从复制">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Mysql主从同步原理以及实战">
+<meta property="og:url" content="http://www.zhumumu.com/Mysql主从同步原理以及实战.html">
 <meta property="og:site_name" content="朱木木的博客">
+<meta property="og:description" content="一、主从复制介绍及原理 Mysql支持单向、双向、实时、异步复制。在复制过程中，一台充当主服务器（master），而一个或者其他充当从服务器（slave）。有利于数据库架构的健壮性、提升访问速度和易于管理。大多数的mysql主从同步都是异步复制方式，即不是严格的实时数据同步。当配置好主从复制后，所有数据内容的更新就必须在主服务器上进行，以避免用户对主服务器数据库内容更新与对从服务器内容更新不一致。">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://blog.x-wa.com/wp-content/uploads/2017/10/MysqlMaster-300x40.png">
+<meta property="og:updated_time" content="2018-07-09T03:21:13.251Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="朱木木的博客">
+<meta name="twitter:title" content="Mysql主从同步原理以及实战">
+<meta name="twitter:description" content="一、主从复制介绍及原理 Mysql支持单向、双向、实时、异步复制。在复制过程中，一台充当主服务器（master），而一个或者其他充当从服务器（slave）。有利于数据库架构的健壮性、提升访问速度和易于管理。大多数的mysql主从同步都是异步复制方式，即不是严格的实时数据同步。当配置好主从复制后，所有数据内容的更新就必须在主服务器上进行，以避免用户对主服务器数据库内容更新与对从服务器内容更新不一致。">
+<meta name="twitter:image" content="http://blog.x-wa.com/wp-content/uploads/2017/10/MysqlMaster-300x40.png">
 
 
 
@@ -115,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://www.zhumumu.com/archives/2018/05/"/>
+  <link rel="canonical" href="http://www.zhumumu.com/Mysql主从同步原理以及实战.html"/>
 
 
 
 
 
-  <title>归档 | 朱木木的博客</title>
+  <title>Mysql主从同步原理以及实战 | 朱木木的博客</title>
   
 
 
@@ -140,7 +147,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -244,111 +251,175 @@
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
-
-      <span class="archive-page-counter">
-        
-        
-        
-          
-        
-        嗯..! 目前共计 21 篇日志。 继续努力。
-      </span>
-
-      
-
-        
-        
-        
-
-        
-          
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2018">2018</h1>
-          </div>
-        
-        
-
-        
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.zhumumu.com/Mysql主从同步原理以及实战.html">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="朱木木">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="朱木木的博客">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/JAVA面向对象三大特性之继承.html" itemprop="url">
-              
-                <span itemprop="name">JAVA面向对象三大特性之继承</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">Mysql主从同步原理以及实战</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-05-11T16:24:26+08:00"
-              content="2018-05-11" >
-          05-11
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-14T00:21:47+08:00">
+                2017-10-14
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/数据库/" itemprop="url" rel="index">
+                    <span itemprop="name">数据库</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/JAVA面向对象三大特性之封装.html" itemprop="url">
-              
-                <span itemprop="name">JAVA面向对象三大特性之封装</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-05-10T18:19:36+08:00"
-              content="2018-05-10" >
-          05-10
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
+      
+        <p><strong>一、主从复制介绍及原理</strong> Mysql支持单向、双向、实时、异步复制。在复制过程中，一台充当主服务器（master），而一个或者其他充当从服务器（slave）。有利于数据库架构的健壮性、提升访问速度和易于管理。大多数的mysql主从同步都是异步复制方式，即不是严格的实时数据同步。当配置好主从复制后，所有数据内容的更新就必须在主服务器上进行，以避免用户对主服务器数据库内容更新与对从服务器内容更新不一致。 原理过程：主库必须开启binlog，主库一个IO线程，从库有两个线程分别是SQL进程、IO进程。 当用户进行增删改的时候，主库把数据写入数据库里面，然后把更新结果写到binlog里面，再在从服务器change master to….设置的master基本参数（master主机，授权用户，密码，端口，binlog文件，指定更新位置），然后start slave开起同步。 开启后，先由从库的IO线程向master发起请求，master接收到请求后先验证是否合法，然后master的IO线程根据slave请求的binlog文件和位置和master最新的binlog文件及位置发给slave。 Slave IO进程收到binlog把它写到relay-log（中继日志）和更新master.info文件的binlog文件名称binlog位置点用作下次请求的，SQL线程就实时把rely-log里语句转换执行。 <strong>二、配置实战</strong> 环境：centos7+mysql5.6 使用的多实例（master端口3306、slave端口3307）ip：192.168.43.100 1.Master在my.cnf配置文件开启binlog  log_bin=/mysqldata/3306/data/mysql-bin                <img src="http://blog.x-wa.com/wp-content/uploads/2017/10/MysqlMaster-300x40.png" alt="">              2.在master添加用于同步的账户  mysql&gt; grant replication slave on <em>.</em> to ‘rep‘@’192.168.43.%’ identified by ‘123456’;  replication slave是mysql同步必须权限，此处不要授权all 3.master数据库备份  Flush table with read lock;       #给主库加个锁，不让用户写入数据  mysqldump -uroot -p123456 -S /mysqldata/3306/tmp/mysql.sock -A -B –events –single-transaction|gzip &gt; /opt/rep.sql.gz         #备份全库（–single-transaction参数是innodb引擎备份参数） Show mater status;       #查看当前binlog文件和位置点（因为之前设置只读了，所以不变，也可以备份时添加–master-data=1参数，当使用此参数时后面slave就不用指定binlog文件和位置点了）  Unlock tables;   #解锁 4.将master备份的恢复到slave中  mysql -uroot -p123456 -S /mysqldata/3307/tmp/mysql.sock &lt;/opt/rep.sql  5.在slave上指定信息 mysql&gt; change master to                        -> MASTER_HOST=’192.168.43.100’,      #master的ip                        -> MASTER_PORT=3306,            #master的端口                        -> MASTER_USER=’rep’,            #master授权用户                        -> MASTER_PASSWORD=’123456’,          #密码                        -> MASTER_LOG_FILE=’ mysql-bin.000001’,      #指定binlog文件                        -> MASTER_LOG_POS=407;          #指定位置                       Query OK, 0 rows affected, 2 warnings (0.04 sec)  6.然后开始在slave登录mysql开启                       start slave;   #开启                        show slave statusG       #查看状态 查看状态查看这两个参数IO线程和SQL线程都YES表成功                 Slave_IO_Running: Yes                        Slave_SQL_Running: Yes 测试：当你在master上更新数据时，slave也会更新。</p>
+
+      
     </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/mysql/" rel="tag"># mysql</a>
+          
+            <a href="/tags/主从复制/" rel="tag"># 主从复制</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/Mysql安装以及mysql多实例配置.html" rel="next" title="Mysql安装以及mysql多实例配置">
+                <i class="fa fa-chevron-left"></i> Mysql安装以及mysql多实例配置
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/Mysql数据库忘记root密码解决办法.html" rel="prev" title="Mysql数据库忘记root密码解决办法">
+                Mysql数据库忘记root密码解决办法 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -356,6 +427,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -605,6 +680,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
