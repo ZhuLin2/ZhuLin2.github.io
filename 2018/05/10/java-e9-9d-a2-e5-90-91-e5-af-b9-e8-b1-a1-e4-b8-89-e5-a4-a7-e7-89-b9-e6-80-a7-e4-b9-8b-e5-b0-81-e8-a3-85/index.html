@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="java," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="1、封装概述封装从字面上来理解就是包装的意思，专业点就是信息隐藏，是指利用抽象数据类型将数据和基于数据的操作封装在一起，使其构成一个不可分割的独立实体，数据被保护在抽象数据类型的内部，尽可能地隐藏内部的细节，只保留一些对外接口使之与外部发生联系。系统的其他对象只能通过包裹在数据外面的已经授权的操作来与这个封装的对象进行交流和交互。也就是说用户是无需知道对象内部的细节（当然也无从知道），但可以通过该">
+<meta name="keywords" content="java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JAVA面向对象三大特性之封装">
+<meta property="og:url" content="http://zhumumu.com/2018/05/10/java-e9-9d-a2-e5-90-91-e5-af-b9-e8-b1-a1-e4-b8-89-e5-a4-a7-e7-89-b9-e6-80-a7-e4-b9-8b-e5-b0-81-e8-a3-85/index.html">
+<meta property="og:site_name" content="朱木木的博客">
+<meta property="og:description" content="1、封装概述封装从字面上来理解就是包装的意思，专业点就是信息隐藏，是指利用抽象数据类型将数据和基于数据的操作封装在一起，使其构成一个不可分割的独立实体，数据被保护在抽象数据类型的内部，尽可能地隐藏内部的细节，只保留一些对外接口使之与外部发生联系。系统的其他对象只能通过包裹在数据外面的已经授权的操作来与这个封装的对象进行交流和交互。也就是说用户是无需知道对象内部的细节（当然也无从知道），但可以通过该">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-07-09T03:21:13.257Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JAVA面向对象三大特性之封装">
+<meta name="twitter:description" content="1、封装概述封装从字面上来理解就是包装的意思，专业点就是信息隐藏，是指利用抽象数据类型将数据和基于数据的操作封装在一起，使其构成一个不可分割的独立实体，数据被保护在抽象数据类型的内部，尽可能地隐藏内部的细节，只保留一些对外接口使之与外部发生联系。系统的其他对象只能通过包裹在数据外面的已经授权的操作来与这个封装的对象进行交流和交互。也就是说用户是无需知道对象内部的细节（当然也无从知道），但可以通过该">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://zhumumu.com/2018/05/10/java-e9-9d-a2-e5-90-91-e5-af-b9-e8-b1-a1-e4-b8-89-e5-a4-a7-e7-89-b9-e6-80-a7-e4-b9-8b-e5-b0-81-e8-a3-85/"/>
+
+
+
+
+
+  <title>JAVA面向对象三大特性之封装 | 朱木木的博客</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">朱木木的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://zhumumu.com/2018/05/10/java-e9-9d-a2-e5-90-91-e5-af-b9-e8-b1-a1-e4-b8-89-e5-a4-a7-e7-89-b9-e6-80-a7-e4-b9-8b-e5-b0-81-e8-a3-85/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="朱木木">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="朱木木的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">JAVA面向对象三大特性之封装</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-10T18:19:36+08:00">
+                2018-05-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JAVA/" itemprop="url" rel="index">
+                    <span itemprop="name">JAVA</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="1、封装概述"><a href="#1、封装概述" class="headerlink" title="1、封装概述"></a>1、封装概述</h1><p>封装从字面上来理解就是包装的意思，专业点就是信息隐藏，是指利用抽象数据类型将数据和基于数据的操作封装在一起，使其构成一个不可分割的独立实体，数据被保护在抽象数据类型的内部，尽可能地隐藏内部的细节，只保留一些对外接口使之与外部发生联系。系统的其他对象只能通过包裹在数据外面的已经授权的操作来与这个封装的对象进行交流和交互。也就是说用户是无需知道对象内部的细节（当然也无从知道），但可以通过该对象对外的提供的接口来访问该对象。</p>
+<h1 id="2、封装的表现及好处"><a href="#2、封装的表现及好处" class="headerlink" title="2、封装的表现及好处"></a>2、封装的表现及好处</h1><ul>
+<li>封装表现：<ul>
+<li>1、方法就是一个最基本封装体。</li>
+<li>2、类其实也是一个封装体。</li>
+</ul>
+</li>
+<li>从以上两点得出结论，封装的好处：<ul>
+<li>1、提高了代码的复用性。</li>
+<li>2、隐藏了实现细节，还要对外提供可以访问的方式。便于调用者的使用。这是核心之一，也可以理解为就是封装的概念。</li>
+<li>3、提高了安全性。</li>
+</ul>
+</li>
+</ul>
+<h1 id="3、封装举例"><a href="#3、封装举例" class="headerlink" title="3、封装举例"></a>3、封装举例</h1><p>机箱： 一台电脑，它是由CPU、主板、显卡、内存、硬盘、电源等部件组长，其实我们将这些部件组装在一起就可以使用电脑了，但是发现这些部件都散落在外面，很容造成不安全因素，于是，使用机箱壳子，把这些部件都装在里面，并在机箱壳上留下一些插口等，若不留插口，大家想想会是什么情况。 总结：机箱其实就是隐藏了办卡设备的细节，对外提供了插口以及开关等访问内部细节的方式。</p>
+<h1 id="4、如何实现封装"><a href="#4、如何实现封装" class="headerlink" title="4、如何实现封装"></a>4、如何实现封装</h1><p>（1）、修改属性的可见性来限制对属性的访问。</p>
+<p>（2）、为每个属性创建一对赋值方法和取值方法，用于对这些属性的访问。</p>
+<p>（3）、在赋值和取值方法中，加入对属性的存取的限制。</p>
+<h1 id="5、私有关键字private"><a href="#5、私有关键字private" class="headerlink" title="5、私有关键字private"></a>5、私有关键字private</h1><p>了解到封装在生活的体现之后，又要回到Java中，细说封装的在Java代码中的体现，先从描述Person说起。 描述人。Person 属性：年龄。 行为：说话：说出自己的年龄。 <strong>class</strong> Person { <strong>int</strong> age; String name; <strong>public</strong> <strong>void</strong> show() { System.<em>out</em>.println(“age=” + age + “,name” + name); } }   <strong>public</strong> <strong>class</strong> PersonDemo { <strong>public</strong> <strong>static</strong> <strong>void</strong> main(String[] args) { // 创建Person对象 Person p = <strong>new</strong> Person(); p.age = -20; // 给Person对象赋值 p.name = “人妖”; p.show(); // 调用Person的show方法 } } 通过上述代码发现，虽然我们用Java代码把Person描述清楚了，但有个严重的问题，就是Person中的属性的行为可以任意访问和使用。这明显不符合实际需求。 可是怎么才能不让访问呢？需要使用一个Java中的关键字也是一个修饰符 private(私有，权限修饰符)。只要将Person的属性和行为私有起来，这样就无法直接访问。 <strong>class</strong> Person { <strong>private</strong> <strong>int</strong> age; <strong>private</strong> String name; <strong>public</strong> <strong>void</strong> show() { System.<em>out</em>.println(“age=” + age + “,name” + name); } } 年龄和姓名已被私有，错误的值无法赋值，可是正确的值也赋值不了，这样还是不行，那怎么办呢？按照之前所学习的封装的原理，隐藏后，还需要提供访问方式。只要对外提供可以访问的方法，让其他程序访问这些方法。同时在方法中可以对数据进行验证。 一般对成员属性的访问动作：赋值(设置 set)，取值(获取 get)，因此对私有的变量访问的方式可以提供对应的 setXxx或者getXxx的方法。 <strong>class</strong> Person { // 私有成员变量 <strong>private</strong> <strong>int</strong> age; <strong>private</strong> String name; // 对外提供设置成员变量的方法 <strong>public</strong> <strong>void</strong> setAge(<strong>int</strong> a) { // 由于是设置成员变量的值，这里可以加入数据的验证 <strong>if</strong> (a &lt; 0 || a &gt; 130) { System.<em>out</em>.println(a + “不符合年龄的数据范围”); <strong>return</strong>; } age = a; } // 对外提供访问成员变量的方法 <strong>public</strong> <strong>void</strong> getAge() { <strong>return</strong> age; } }</p>
+<ul>
+<li>总结：</li>
+</ul>
+<p>类中不需要对外提供的内容都私有化，包括属性和方法。 以后再描述事物，属性都私有化，并提供setXxx getXxx方法对其进行访问。</p>
+<ul>
+<li>注意：私有仅仅是封装的体现形式而已。</li>
+</ul>
+<h1 id="6、this关键字"><a href="#6、this关键字" class="headerlink" title="6、this关键字"></a>6、this关键字</h1><p>This是在对象内部指代自身的引用。可以直接引用对象，可以解决实例变量和局部变量之间发生的任何同名的冲突。</p>
+<h2 id="6-1、-成员变量和局部变量同名问题"><a href="#6-1、-成员变量和局部变量同名问题" class="headerlink" title="6.1、 成员变量和局部变量同名问题"></a>6.1、 成员变量和局部变量同名问题</h2><p>当在方法中出现了局部变量和成员变量同名的时候，那么在方法中怎么区别局部变量成员变量呢？可以在成员变量名前面加上this.来区别成员变量和局部变量 <strong>class</strong> Person { <strong>private</strong> <strong>int</strong> age; <strong>private</strong> String name;   <strong>public</strong> <strong>void</strong> speak() { <strong>this</strong>.name = “小强”; <strong>this</strong>.age = 18; System.<em>out</em>.println(“name=” + <strong>this</strong>.name + “,age=” + <strong>this</strong>.age); } }   <strong>class</strong> PersonDemo { <strong>public</strong> <strong>static</strong> <strong>void</strong> main(String[] args) { Person p = <strong>new</strong> Person(); p.speak(); } } 6.2、this关键字应用 需求：在Person类中定义功能，判断两个人是否是同龄人 <strong>class</strong> Person { <strong>private</strong> <strong>int</strong> age; <strong>private</strong> String name; <strong>public</strong> <strong>int</strong> getAge() { <strong>return</strong> age; } <strong>public</strong> <strong>void</strong> setAge(<strong>int</strong> age) { <strong>this</strong>.age = age; } <strong>public</strong> String getName() { <strong>return</strong> name; } <strong>public</strong> <strong>void</strong> setName(String name) { <strong>this</strong>.name = name; } <strong>public</strong> <strong>void</strong> speak() { System.<strong><em>out</em></strong>.println(“name=” + <strong>this</strong>.name + “,age=” + <strong>this</strong>.age); } // 判断是否为同龄人 <strong>public</strong> <strong>boolean</strong> equalsAge(Person p) { // 使用当前调用该equalsAge方法对象的age和传递进来p的age进行比较 // 由于无法确定具体是哪一个对象调用equalsAge方法，这里就可以使用this来代替 /<em> </em> if(this.age == p.age) { return true; } return false; */ <strong>return</strong> <strong>this</strong>.age == p.age; } }</p>
+<h1 id="7、总结"><a href="#7、总结" class="headerlink" title="7、总结"></a>7、总结</h1><ul>
+<li>封装（private关键字）<ul>
+<li>封装，把对象的属性与方法的实现细节隐藏，仅对外提供一些公共的访问方式</li>
+<li>封装的体现：<ul>
+<li>变量:使用 private 修饰，这就是变量的封装</li>
+<li>方法:也是一种封装，封装了多条代码</li>
+<li>类： 也是一种封装，封装了多个方法</li>
+</ul>
+</li>
+<li>private关键字，私有的意思<ul>
+<li>它可以用来修饰类中的成员(成员变量，成员方法)</li>
+<li>private的特点：<ul>
+<li>private修饰的成员只能在当前类中访问，其他类中无法直接访问</li>
+</ul>
+</li>
+<li>this关键字<ul>
+<li>this关键字，本类对象的引用<ul>
+<li>this是在方法中使用的，哪个对象调用了该方法，那么，this就代表调用该方法的对象引用</li>
+<li>this什么时候存在的？当创建对象的时候，this存在的</li>
+<li>this的作用：用来区别同名的成员变量与局部变量（成员变量）</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>public void setName(String name) { this.name = name; }</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/java/" rel="tag"># java</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/04/03/ef-bc-88-e4-ba-94-ef-bc-89java-e5-ad-a6-e4-b9-a0-e4-b9-8b-e6-96-b9-e6-b3-95/" rel="next" title="（五）JAVA学习之方法">
+                <i class="fa fa-chevron-left"></i> （五）JAVA学习之方法
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/05/11/java-e9-9d-a2-e5-90-91-e5-af-b9-e8-b1-a1-e4-b8-89-e5-a4-a7-e7-89-b9-e6-80-a7-e4-b9-8b-e7-bb-a7-e6-89-bf/" rel="prev" title="JAVA面向对象三大特性之继承">
+                JAVA面向对象三大特性之继承 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">朱木木</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">22</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">分类</span>
+                
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1、封装概述"><span class="nav-number">1.</span> <span class="nav-text">1、封装概述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2、封装的表现及好处"><span class="nav-number">2.</span> <span class="nav-text">2、封装的表现及好处</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3、封装举例"><span class="nav-number">3.</span> <span class="nav-text">3、封装举例</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4、如何实现封装"><span class="nav-number">4.</span> <span class="nav-text">4、如何实现封装</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5、私有关键字private"><span class="nav-number">5.</span> <span class="nav-text">5、私有关键字private</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6、this关键字"><span class="nav-number">6.</span> <span class="nav-text">6、this关键字</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#6-1、-成员变量和局部变量同名问题"><span class="nav-number">6.1.</span> <span class="nav-text">6.1、 成员变量和局部变量同名问题</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#7、总结"><span class="nav-number">7.</span> <span class="nav-text">7、总结</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">朱木木</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a></div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
