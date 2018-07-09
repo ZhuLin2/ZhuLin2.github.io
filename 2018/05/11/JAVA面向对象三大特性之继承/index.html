@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="java," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="1、继承在Java中，类的继承是指在一个现有类的基础上去构建一个新的类，构建出来的新类被称作子类，现有类被称作父类，子类会自动拥有父类所有可继承的属性和方法。  2、继承格式及用法在程序中，如果想声明一个类继承另一个类，需要使用extends关键字。 格式： class 子类 extends 父类 {} 接下来通过一个案例来学习子类是如何继承父类的，如下所示。Example01.java /  定">
+<meta name="keywords" content="java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JAVA面向对象三大特性之继承">
+<meta property="og:url" content="http://zhumumu.com/2018/05/11/JAVA面向对象三大特性之继承/index.html">
+<meta property="og:site_name" content="朱木木的博客">
+<meta property="og:description" content="1、继承在Java中，类的继承是指在一个现有类的基础上去构建一个新的类，构建出来的新类被称作子类，现有类被称作父类，子类会自动拥有父类所有可继承的属性和方法。  2、继承格式及用法在程序中，如果想声明一个类继承另一个类，需要使用extends关键字。 格式： class 子类 extends 父类 {} 接下来通过一个案例来学习子类是如何继承父类的，如下所示。Example01.java /  定">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://blog.zhumumu.com/wp-content/uploads/2018/05/继承-300x152.png">
+<meta property="og:updated_time" content="2018-07-09T03:21:13.257Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JAVA面向对象三大特性之继承">
+<meta name="twitter:description" content="1、继承在Java中，类的继承是指在一个现有类的基础上去构建一个新的类，构建出来的新类被称作子类，现有类被称作父类，子类会自动拥有父类所有可继承的属性和方法。  2、继承格式及用法在程序中，如果想声明一个类继承另一个类，需要使用extends关键字。 格式： class 子类 extends 父类 {} 接下来通过一个案例来学习子类是如何继承父类的，如下所示。Example01.java /  定">
+<meta name="twitter:image" content="http://blog.zhumumu.com/wp-content/uploads/2018/05/继承-300x152.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://zhumumu.com/2018/05/11/JAVA面向对象三大特性之继承/"/>
+
+
+
+
+
+  <title>JAVA面向对象三大特性之继承 | 朱木木的博客</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">朱木木的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://zhumumu.com/2018/05/11/JAVA面向对象三大特性之继承/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="朱木木">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="朱木木的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">JAVA面向对象三大特性之继承</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-11T16:24:26+08:00">
+                2018-05-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JAVA/" itemprop="url" rel="index">
+                    <span itemprop="name">JAVA</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="1、继承"><a href="#1、继承" class="headerlink" title="1、继承"></a>1、继承</h1><p>在Java中，类的继承是指在一个现有类的基础上去构建一个新的类，构建出来的新类被称作子类，现有类被称作父类，子类会自动拥有父类所有可继承的属性和方法。 <img src="http://blog.zhumumu.com/wp-content/uploads/2018/05/继承-300x152.png" alt=""></p>
+<h1 id="2、继承格式及用法"><a href="#2、继承格式及用法" class="headerlink" title="2、继承格式及用法"></a>2、继承格式及用法</h1><p>在程序中，如果想声明一个类继承另一个类，需要使用extends关键字。 格式： class 子类 extends 父类 {} 接下来通过一个案例来学习子类是如何继承父类的，如下所示。Example01.java /<em> </em> 定义员工类Employee <em>/ <strong>class</strong> Employee { String name; // 定义name属性 // 定义员工的工作方法 <strong>public</strong> <strong>void</strong> work() { System.<strong><em>out</em></strong>.println(“尽心尽力地工作”); } }   /</em> <em> 定义研发部员工类Developer 继承 员工类Employee </em>/ <strong>class</strong> Developer <strong>extends</strong> Employee { // 定义一个打印name的方法 <strong>public</strong> <strong>void</strong> printName() { System.<strong><em>out</em></strong>.println(“name=” + name); } } /<em> </em> 定义测试类 */ <strong>public</strong> <strong>class</strong> Example01 { <strong>public</strong> <strong>static</strong> <strong>void</strong> main(String[] args) { Developer d = <strong>new</strong> Developer(); // 创建一个研发部员工类对象 d.name = “小明”; // 为该员工类的name属性进行赋值 d.printName(); // 调用该员工的printName()方法 d.work(); // 调用Developer类继承来的work()方法 } } 在上述代码中，Developer类通过extends关键字继承了Employee类，这样Developer类便是Employee类的子类。从运行结果不难看出，子类虽然没有定义name属性和work()方法，但是却能访问这两个成员。这就说明，子类在继承父类的时候，会自动拥有父类的成员。</p>
+<h1 id="3、继承好处及注意事项"><a href="#3、继承好处及注意事项" class="headerlink" title="3、继承好处及注意事项"></a>3、继承好处及注意事项</h1><p>继承的好处： 1、继承的出现提高了代码的复用性，提高软件开发效率。 2、继承的出现让类与类之间产生了关系，提供了多态的前提。 在类的继承中，需要注意一些问题，具体如下：</p>
+<ul>
+<li>1、在Java中，类只支持单继承，不允许多继承，也就是说一个类只能有一个直接父类，例如下面这种情况是不合法的。</li>
+</ul>
+<p>class A{} class B{} class C extends A,B{}  // C类不可以同时继承A类和B类</p>
+<ul>
+<li>2、多个类可以继承一个父类，例如下面这种情况是允许的。</li>
+</ul>
+<p>class A{} class B extends A{} class C extends A{}   // 类B和类C都可以继承类A</p>
+<ul>
+<li>3、在Java中，多层继承是可以的，即一个类的父类可以再去继承另外的父类，例如C类继承自B类，而B类又可以去继承A类，这时，C类也可称作A类的子类。下面这种情况是允许的。</li>
+</ul>
+<p>class A{} class B extends A{}   // 类B继承类A，类B是类A的子类 class C extends B{}   // 类C继承类B，类C是类B的子类，同时也是类A的子类</p>
+<ul>
+<li>4、在Java中，子类和父类是一种相对概念，也就是说一个类是某个类父类的同时，也可以是另一个类的子类。例如上面的这种情况中，B类是A类的子类，同时又是C类的父类。</li>
+</ul>
+<h1 id="4、继承-父子类中成员变量特点"><a href="#4、继承-父子类中成员变量特点" class="headerlink" title="4、继承-父子类中成员变量特点"></a>4、继承-父子类中成员变量特点</h1><p>成员变量：如果子类父类中出现不同名的成员变量，这时的访问是没有任何问题。   父类中的成员变量是非私有的，子类中可以直接访问，若父类中的成员变量私有了，子类是不能直接访问的。 当子父类中出现了同名成员变量时，在子类中若要访问父类中的成员变量，必须使用关键字super来完成。super用来表示当前对象中包含的父类对象空间的引用。 在子类中，访问父类中的成员变量格式： super.父类中的成员变量    </p>
+<h1 id="5、继承-子父类成员方法特点（重写）"><a href="#5、继承-子父类成员方法特点（重写）" class="headerlink" title="5、继承-子父类成员方法特点（重写）"></a>5、继承-子父类成员方法特点（重写）</h1><ul>
+<li>子父类中成员方法的特点</li>
+</ul>
+<p>当在程序中通过对象调用方法时，会先在子类中查找有没有对应的方法，若子类中存在就会执行子类中的方法，若子类中不存在就会执行父类中相应的方法。</p>
+<ul>
+<li>成员方法特殊情况——覆盖</li>
+</ul>
+<p>子类中出现与父类一模一样的方法时，会出现覆盖操作，也称为override重写、复写或者覆盖。</p>
+<ul>
+<li>方法重写（覆盖）的应用：</li>
+</ul>
+<p>当子类需要父类的功能，而功能主体子类有自己特有内容时，可以重写父类中的方法，这样，即沿袭了父类的功能，又定义了子类特有的内容。 举例：比如手机，当描述一个手机时，它具有发短信，打电话，来电显示来电号码功能，后期由于手机需要在来电显示功能中增加显示姓名和头像，这时可以重新定义一个类描述智能手机，并继承原有描述手机的类。并在新定义的类中覆盖来电显示功能，在其中增加显示姓名和头像功能。   在子类中，访问父类中的成员方法格式： super.父类中的成员方法();   重写需要注意的细节问题：</p>
+<ul>
+<li><p>子类方法覆盖父类方法，必须要保证权限大于等于父类权限。</p>
+</li>
+<li><p>写法上稍微注意:必须一模一样:方法的返回值类型 方法名 参数列表都要一样。</p>
+</li>
+</ul>
+<h1 id="6、知识点总结"><a href="#6、知识点总结" class="headerlink" title="6、知识点总结"></a>6、知识点总结</h1><ul>
+<li>继承：是指在一个现有类的基础上去构建一个新的类，构建出来的新类被称作子类，现有类被称作父类，子类会自动拥有父类所有</li>
+<li>继承的好处：可继承的属性和方法。</li>
+</ul>
+<p>提高了代表的可维护性 提高了代码的复用性 让类与类之间产生了继承关系</p>
+<ul>
+<li>继承的弊端：</li>
+</ul>
+<p>类与类之间的耦合度过高</p>
+<ul>
+<li>继承特点：</li>
+</ul>
+<p>java中类只能够单继承，不能多继承，可以多层继承   所有的类都直接或者间接的继承了 Object类，Object类称为祖宗类</p>
+<ul>
+<li>继承的注意事项：</li>
+</ul>
+<p>1，使用关键字 extends 让类与类之间 产生继承关系 2, 父类私有的成员，子类不能继承，因为根本看不到 3，不能为了继承某个功能而随意进行继承操作， 必须要符合 is a 的关系 苹果 is a 水果 男人 is a 人 狗   is a 人 ， 这种情况就不能继承了</p>
+<ul>
+<li>继承中的成员变量关系：</li>
+</ul>
+<p>不同名的变量：子类直接继承使用 同名的变量：默认访问的是子类自己的成员变量, 想访问父类中的同名变量，使用 super.成员变量;</p>
+<ul>
+<li>继承中的成员方法关系：</li>
+</ul>
+<p>不同名的方法：子类直接继承使用 同名的方法：默认访问的是子类自己的成员方法，想访问父类中的同名方法，请使用 super.成员方法();</p>
+<ul>
+<li>super:用来表示当前对象中包含的父类对象空间的引用</li>
+</ul>
+<p>调用父类的成员变量：super.成员变量; 调用方法的成员方法:   super.成员方法();</p>
+<ul>
+<li><p>方法重写(override)：指 在子父类中，出现了方法声明相同的情况，也叫做方法覆盖，方法复写</p>
+<ul>
+<li>方法重写的注意事项：<ul>
+<li>子类的方法声明要与父类相同</li>
+<li>子类要重写的方法，方法的权限修饰符不能比父类的更低</li>
+<li>父类私有的方法，子类不能够进行方法重写</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>方法重载(overload)：指 在同一个类中，多个方法名称相同，它们的参数列表不同(个数不同，数据类型不同)</p>
+</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/java/" rel="tag"># java</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/05/10/JAVA面向对象三大特性之封装/" rel="next" title="JAVA面向对象三大特性之封装">
+                <i class="fa fa-chevron-left"></i> JAVA面向对象三大特性之封装
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.png"
+                alt="朱木木" />
+            
+              <p class="site-author-name" itemprop="name">朱木木</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1、继承"><span class="nav-number">1.</span> <span class="nav-text">1、继承</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2、继承格式及用法"><span class="nav-number">2.</span> <span class="nav-text">2、继承格式及用法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3、继承好处及注意事项"><span class="nav-number">3.</span> <span class="nav-text">3、继承好处及注意事项</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4、继承-父子类中成员变量特点"><span class="nav-number">4.</span> <span class="nav-text">4、继承-父子类中成员变量特点</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5、继承-子父类成员方法特点（重写）"><span class="nav-number">5.</span> <span class="nav-text">5、继承-子父类成员方法特点（重写）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6、知识点总结"><span class="nav-number">6.</span> <span class="nav-text">6、知识点总结</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">朱木木</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a></div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
